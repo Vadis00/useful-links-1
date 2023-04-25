@@ -16,7 +16,7 @@
     <main class="conteiner">
 
         <div class="block">
-            <details id="Q0A0" class="accordion">
+            <details id="Q0A0" class="accordion" open>
                 <summary id="Q0A0" class="block-header main-header">
                     <div class="left">
                         <i class="fa-solid fa-house-chimney fa-xl" style="color: #0b4984;"></i>
@@ -595,7 +595,7 @@
                                                                 </a>
 
                                                                 <div class="row-test">
-                                                                    <details id="details-management"
+                                                                    <details id="details-management-2"
                                                                         class="accordion-menu ">
                                                                         <summary class="block-header summary-part">
                                                                             <div class="left">
@@ -1724,28 +1724,28 @@
 
         // function closeAllDetail(detailsElement) {
         //     console.log(detailsElement)
-        //     const details = document.getElementsByTagName('details');
-        //     const id = [];
-        //     for (let i = 0; i < details.length; i++) {
-        //         id.push(details[i].id);
-        //     }
+             const details = document.getElementsByTagName('details');
+             const id = [];
+             for (let i = 0; i < details.length; i++) {
+                 id.push(details[i].id);
+             }
+
+     /*    const details = [
+            "details-how",
+            "details-designer",
+
+        ];
+ */
 
         function closeAllDetail(detailsElement) {
-            const details = document.getElementsByTagName('details');
-            document.addEventListener('click', (event) => {
-                const clickedElement = event.target;
-                console.log(clickedElement)
-                if (clickedElement.tagName.toLowerCase() !== 'details') {    // || clickedElement.closest('#Q0A0')
-                    return;
-                }
-                console.log(details)
-                for (let i = 0; i < details.length; i++) {
-                    const element = details[i];
-                    if (element.id !== detailsElement && element.hasAttribute('open')) {
-                        element.removeAttribute('open');
-                    }
-                }
-            });
+
+            const clickedElement = event.target;
+
+            /* console.log(details) */
+            for (let i = 0; i < id.length; i++) {
+                if (id[i] !== detailsElement && id[i] !== "Q0A0")
+                    document.getElementById(id[i]).removeAttribute("open");
+            }
         }
     </script>
 </body>
